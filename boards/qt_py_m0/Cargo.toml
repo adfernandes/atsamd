@@ -1,27 +1,31 @@
+# When using intellij-rust, disable 'all-targets' you will get an error on build:
+# https://github.com/intellij-rust/intellij-rust/issues/5211#issuecomment-633513345
+#
 [package]
 name = "qt_py_m0"
-version = "0.10.0"
-authors = ["Garret Kelly <gkelly@gkel.ly>"]
+version = "0.11.0"
+authors = ["Garret Kelly <gkelly@gkel.ly>", "Andrew Fernandes <andrew@fernandes.org>"]
 description = "Board Support crate for the Adafruit QT Py"
 keywords = ["no-std", "arm", "cortex-m", "embedded-hal"]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/atsamd-rs/atsamd"
 readme = "README.md"
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-cortex-m-rt = { version = "0.6.12", optional = true }
-usb-device = { version = "0.2", optional = true }
+cortex-m-rt = { version = "0.7.1", optional = true }
+usb-device = { version = "0.2.8", optional = true }
 
 [dependencies.atsamd-hal]
-version = "0.13"
+version = "0.13.0"
 default-features = false
+path = "../../hal"
 
 [dev-dependencies]
-usbd-serial = "0.1"
-panic-halt = "0.2"
-smart-leds = "0.3"
-ws2812-timer-delay = { version = "0.3", features = ["slow"] }
+usbd-serial = "0.1.1"
+ws2812-timer-delay = { version = "0.3.0", features = ["slow"] }
+smart-leds = "0.3.0"
+panic-halt = "0.2.0"
 
 [features]
 default = ["rt", "atsamd-hal/samd21e"]
@@ -29,3 +33,4 @@ rt = ["cortex-m-rt", "atsamd-hal/samd21e-rt"]
 unproven = ["atsamd-hal/unproven"]
 use_semihosting = []
 usb = ["atsamd-hal/usb", "usb-device"]
+spi_flash = []
