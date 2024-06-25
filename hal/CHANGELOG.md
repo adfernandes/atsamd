@@ -1,6 +1,11 @@
 # Unreleased Changes
 
+- Fix I2C transaction to be as continuous as possible according to `embedded-hal` specification
 - Allow configuring USB clock with `GenericClockController` on atsamd11
+- fix samd51j not having i2s support
+- remove i2s functionality for samd51g since it does not have it
+- Fix EIC issue leading to lost interrupts
+- Fix docbuild indentation errors with nightly toolchain
 
 # v0.17.0
 
