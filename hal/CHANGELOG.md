@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.23.2](https://github.com/adfernandes/atsamd/compare/atsamd-hal-0.23.1...atsamd-hal-0.23.2) - 2026-02-06
+
+### Added
+
+- *(usb)* USB allocation rework and simplification ([#963](https://github.com/adfernandes/atsamd/pull/963))
+
+### Fixed
+
+- *(pwm)* Fix for off-by-one in get_max_duty() ([#959](https://github.com/adfernandes/atsamd/pull/959))
+
 ## [0.23.1](https://github.com/atsamd-rs/atsamd/compare/atsamd-hal-0.23.0...atsamd-hal-0.23.1) - 2025-12-29
 
 ### Added
